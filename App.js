@@ -1,20 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+
+import { useState } from 'react';
+import { StyleSheet, View ,Button ,Text } from 'react-native';
 
 export default function App() {
+
+  const[counter , setCounter] = useState(0)
+
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View >
+     <Button 
+      onPress={()=>{
+        setCounter(counter+1)
+      }}
+    title='artır'
+     />
+        <Button 
+      onPress={()=>{
+        setCounter(counter-1)
+      }}
+    title='azalt'
+     />
+     <Text >Sayı: {counter}</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+
 });
